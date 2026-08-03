@@ -1,0 +1,194 @@
+/* 모든 요소의 크기 계산 방식을 통일합니다. */
+* {
+  box-sizing: border-box;
+}
+
+/* 영화 관리 앱 전체 영역입니다. */
+.movie-manager {
+  width: 100%;
+  max-width: 620px;
+  margin: 60px auto;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 앱 제목입니다. */
+.movie-manager__title {
+  margin: 0 0 28px;
+  color: #222222;
+  font-size: 32px;
+  text-align: center;
+}
+
+/* 입력창과 추가 버튼을 감싸는 영역입니다. */
+.movie-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+/* 영화 제목 입력창입니다. */
+.movie-form__input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* 입력창을 선택했을 때의 스타일입니다. */
+.movie-form__input:focus {
+  border-color: #5b67f1;
+  box-shadow: 0 0 0 3px rgba(91, 103, 241, 0.15);
+}
+
+/* 영화 추가 버튼입니다. */
+.movie-form__button {
+  padding: 0 22px;
+  border: none;
+  border-radius: 10px;
+  background-color: #5b67f1;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* 추가 버튼에 마우스를 올렸을 때입니다. */
+.movie-form__button:hover {
+  background-color: #4652d9;
+}
+
+/* 영화 목록 ul 태그입니다. */
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 영화 한 항목을 나타냅니다. */
+.movie-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 16px;
+  background-color: #f7f7fa;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+}
+
+/* 체크박스와 영화 제목을 묶는 영역입니다. */
+.movie-item__label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  cursor: pointer;
+}
+
+/* 영화 시청완료 체크박스입니다. */
+.movie-item__checkbox {
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+}
+
+/* 영화 제목의 기본 스타일입니다. */
+.movie-item__title {
+  color: #222222;
+  font-size: 17px;
+  word-break: break-all;
+}
+
+/* watched가 true인 영화 제목에 적용됩니다. */
+.movie-item__title--watched {
+  color: #999999;
+  text-decoration: line-through;
+}
+
+/* 영화 삭제 버튼입니다. */
+.movie-item__delete-button {
+  flex-shrink: 0;
+  padding: 8px 13px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ef5350;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 삭제 버튼에 마우스를 올렸을 때입니다. */
+.movie-item__delete-button:hover {
+  background-color: #d94340;
+}
+
+/* 필터 버튼 전체 영역입니다. */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+/* 필터 버튼의 기본 스타일입니다. */
+.filter-buttons__button {
+  padding: 10px 17px;
+  border: 1px solid #cccccc;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: #555555;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 필터 버튼에 마우스를 올렸을 때입니다. */
+.filter-buttons__button:hover {
+  border-color: #5b67f1;
+  color: #5b67f1;
+}
+
+/* 현재 선택된 필터 버튼입니다. */
+.filter-buttons__button--active {
+  border-color: #5b67f1;
+  background-color: #5b67f1;
+  color: #ffffff;
+}
+
+/* 선택된 버튼은 hover 상태에서도 글자를 흰색으로 유지합니다. */
+.filter-buttons__button--active:hover {
+  color: #ffffff;
+}
+
+/* 화면 너비가 520px 이하일 때 적용됩니다. */
+@media (max-width: 520px) {
+  .movie-manager {
+    margin: 20px auto;
+    padding: 22px 16px;
+    border-radius: 14px;
+  }
+
+  .movie-manager__title {
+    font-size: 26px;
+  }
+
+  .movie-form {
+    flex-direction: column;
+  }
+
+  .movie-form__button {
+    padding: 13px;
+  }
+
+  .filter-buttons {
+    flex-wrap: wrap;
+  }
+}

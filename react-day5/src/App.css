@@ -1,0 +1,409 @@
+/* React 앱이 화면 전체 높이를 사용하도록 설정함 */
+#root {
+  min-height: 100vh;
+}
+
+/* 앱 전체 영역이 화면 전체 높이를 사용하도록 설정함 */
+.app {
+  min-height: 100vh;
+}
+
+/* 모든 페이지에 공통으로 보이는 상단 네비게이션임 */
+.header {
+  /* 스크롤해도 화면 위에 유지되도록 설정함 */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  /* 로고와 메뉴를 한 줄로 배치함 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* 높이와 좌우 여백을 설정함 */
+  min-height: 72px;
+  padding: 0 6%;
+
+  /* 배경색과 아래쪽 테두리를 설정함 */
+  background-color: rgba(20, 21, 26, 0.96);
+  border-bottom: 1px solid #333640;
+}
+
+/* 왼쪽 로고 스타일임 */
+.logo {
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+/* 메뉴들을 한 줄로 배치함 */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 네비게이션 링크와 로그아웃 버튼의 공통 스타일임 */
+.nav-link,
+.logout-button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #b8bbc5;
+  font-size: 14px;
+  font-weight: 600;
+
+  /* 색상 변화가 부드럽게 보이도록 설정함 */
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+/* 메뉴에 마우스를 올렸을 때 적용됨 */
+.nav-link:hover,
+.logout-button:hover {
+  background-color: #30323b;
+  color: #ffffff;
+}
+
+/* 현재 페이지의 메뉴에 적용되는 스타일임 */
+.nav-link.active {
+  background-color: #ffffff;
+  color: #18191e;
+}
+
+/* 각 페이지 내용이 표시되는 주요 영역임 */
+.main {
+  width: min(1120px, 88%);
+  margin: 0 auto;
+  padding: 64px 0 100px;
+}
+
+/* 페이지 제목 영역 아래에 여백을 설정함 */
+.page-heading {
+  margin-bottom: 32px;
+}
+
+/* 페이지의 큰 제목 스타일임 */
+.page-heading h1 {
+  margin: 8px 0 10px;
+  font-size: clamp(32px, 5vw, 48px);
+}
+
+/* 페이지 설명 문구 스타일임 */
+.page-heading > p:last-child {
+  margin: 0;
+  color: #686c77;
+}
+
+/* 작은 영어 제목 스타일임 */
+.eyebrow {
+  margin: 0;
+  color: #e05252;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+/* 영화 카드를 3열로 배치함 */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* 영화 카드 스타일임 */
+.movie-card {
+  overflow: hidden;
+  border: 1px solid #e0e1e5;
+  border-radius: 18px;
+  background-color: #ffffff;
+
+  /* 움직임과 그림자가 부드럽게 변하도록 설정함 */
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+/* 영화 카드에 마우스를 올렸을 때 적용됨 */
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(24, 25, 30, 0.12);
+}
+
+/* 영화 포스터를 대신하는 어두운 영역임 */
+.movie-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 230px;
+  background: linear-gradient(145deg, #242630, #131419);
+}
+
+/* 포스터 안 이모지 크기임 */
+.movie-poster span {
+  font-size: 72px;
+}
+
+/* 영화 정보 영역의 안쪽 여백임 */
+.movie-card-content {
+  padding: 22px;
+}
+
+/* 영화 카드 제목 스타일임 */
+.movie-card-content h2 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+/* 영화 카드 장르 스타일임 */
+.movie-card-content p {
+  margin: 0 0 16px;
+  color: #686c77;
+}
+
+/* 개봉 연도와 즐겨찾기 문구 스타일임 */
+.movie-card-content span {
+  color: #e05252;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* 영화 상세 페이지의 최대 너비를 설정함 */
+.detail-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 뒤로가기 버튼 스타일임 */
+.back-button {
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border: 0;
+  background: transparent;
+  color: #555a66;
+  font-weight: 700;
+}
+
+/* 뒤로가기 버튼에 마우스를 올렸을 때 적용됨 */
+.back-button:hover {
+  color: #e05252;
+}
+
+/* 영화 상세 정보를 좌우로 배치함 */
+.movie-detail-card {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  overflow: hidden;
+  border-radius: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 20px 50px rgba(24, 25, 30, 0.1);
+}
+
+/* 상세 페이지의 포스터 영역임 */
+.detail-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+  background: linear-gradient(145deg, #242630, #111216);
+}
+
+/* 상세 포스터 안 이모지 크기임 */
+.detail-poster span {
+  font-size: 110px;
+}
+
+/* 영화 상세 내용 영역의 여백임 */
+.detail-content {
+  padding: 48px;
+}
+
+/* 상세 페이지 영화 제목 스타일임 */
+.detail-content h1 {
+  margin: 10px 0 32px;
+  font-size: 42px;
+}
+
+/* 영화 정보를 세로로 배치함 */
+.movie-information {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/* 영화 정보의 제목과 값을 좌우로 배치함 */
+.movie-information p {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  margin: 0;
+}
+
+/* 개봉 연도, 장르, 감독 제목 스타일임 */
+.movie-information strong {
+  color: #787c86;
+}
+
+/* 영화 설명 문구 스타일임 */
+.description {
+  margin: 0;
+  color: #555a66;
+  line-height: 1.8;
+}
+
+/* 로그인과 오류 페이지의 내용을 가운데 배치함 */
+.login-page,
+.message-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 65vh;
+}
+
+/* 로그인 카드와 오류 상자의 공통 스타일임 */
+.login-card,
+.message-box {
+  width: min(440px, 100%);
+  padding: 48px;
+  border: 1px solid #e0e1e5;
+  border-radius: 24px;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(24, 25, 30, 0.08);
+}
+
+/* 로그인과 오류 이모지 스타일임 */
+.login-icon,
+.message-icon {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 64px;
+}
+
+/* 로그인과 오류 페이지 제목 스타일임 */
+.login-card h1,
+.message-box h1 {
+  margin: 10px 0 14px;
+}
+
+/* 로그인과 오류 설명 문구 스타일임 */
+.login-description,
+.message-box p {
+  margin: 0 0 28px;
+  color: #686c77;
+  line-height: 1.7;
+}
+
+/* 주요 버튼 스타일임 */
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #e05252;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* 주요 버튼에 마우스를 올렸을 때 적용됨 */
+.primary-button:hover {
+  background-color: #c94343;
+}
+
+/* 로그인 버튼이 가로 전체를 사용하도록 설정함 */
+.login-button {
+  width: 100%;
+}
+
+/* 원래 페이지 이동 안내 문구 스타일임 */
+.redirect-message {
+  margin: 18px 0 0;
+  color: #e05252;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* 404 숫자 스타일임 */
+.error-number {
+  display: block;
+  color: #e05252;
+  font-size: 72px;
+  font-weight: 900;
+}
+
+/* Link를 버튼처럼 사용할 때 밑줄을 없앰 */
+.link-button {
+  text-decoration: none;
+}
+
+/* 화면 너비가 850px 이하일 때 적용함 */
+@media (max-width: 850px) {
+  /* 영화 카드를 2열로 변경함 */
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 상세 카드를 위아래 구조로 변경함 */
+  .movie-detail-card {
+    grid-template-columns: 1fr;
+  }
+
+  /* 상세 포스터 높이를 줄임 */
+  .detail-poster {
+    min-height: 280px;
+  }
+}
+
+/* 화면 너비가 600px 이하일 때 적용함 */
+@media (max-width: 600px) {
+  /* 네비게이션을 위아래로 배치함 */
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  /* 메뉴가 화면을 넘으면 가로로 스크롤되게 함 */
+  .navigation {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  /* 모바일 본문 너비와 여백을 조정함 */
+  .main {
+    width: min(92%, 500px);
+    padding-top: 40px;
+  }
+
+  /* 영화 카드를 1열로 변경함 */
+  .movie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 영화 포스터 높이를 줄임 */
+  .movie-poster {
+    height: 200px;
+  }
+
+  /* 상세 내용의 안쪽 여백을 줄임 */
+  .detail-content {
+    padding: 30px 24px;
+  }
+
+  /* 상세 영화 제목 크기를 줄임 */
+  .detail-content h1 {
+    font-size: 34px;
+  }
+
+  /* 로그인 카드와 오류 상자의 여백을 줄임 */
+  .login-card,
+  .message-box {
+    padding: 36px 24px;
+  }
+}

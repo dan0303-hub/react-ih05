@@ -1,0 +1,48 @@
+/* 모든 요소의 너비 계산에 padding과 border를 포함함 */
+* {
+  box-sizing: border-box;
+}
+
+/* 앱 전체에서 사용할 기본 글꼴을 설정함 */
+:root {
+  font-family:
+    Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* 브라우저가 임의로 글꼴을 만들지 않도록 설정함 */
+  font-synthesis: none;
+
+  /* 글자가 자연스럽게 보이도록 설정함 */
+  text-rendering: optimizeLegibility;
+}
+
+/* HTML 문서가 화면 전체 높이를 사용하도록 설정함 */
+html {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+/* 브라우저의 기본 여백과 전체 배경을 설정함 */
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f5f7;
+  color: #202124;
+}
+
+/* 버튼과 링크가 부모 요소의 글꼴을 사용하게 함 */
+button,
+a {
+  font: inherit;
+}
+
+/* 버튼에 마우스를 올리면 손가락 모양을 표시함 */
+button {
+  cursor: pointer;
+}
+
+/* 링크의 기본 밑줄과 색상을 제거함 */
+a {
+  color: inherit;
+  text-decoration: none;
+}

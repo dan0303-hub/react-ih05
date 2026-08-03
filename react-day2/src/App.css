@@ -1,0 +1,182 @@
+/* ===== 기본 과제 1. 전체 페이지 기본 설정 ===== */
+body {
+  margin: 0;
+  background-color: #f5f6f8;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== 기본 과제 2. 강의 카드 목록 배치 ===== */
+.course-list {
+  /* 카드들을 Grid로 배치 */
+  display: grid;
+
+  /* 화면 크기에 맞게 카드 개수 자동 조절 */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  /* 카드 사이 간격 */
+  gap: 24px;
+
+  /* 전체 안쪽 여백 */
+  padding: 40px;
+
+  /* 최대 너비 */
+  max-width: 1200px;
+
+  /* 가운데 정렬 */
+  margin: 0 auto;
+}
+
+/* ===== 기본 과제 3. 강의 카드 디자인 ===== */
+.course-card {
+  background-color: white;
+
+  /* 모서리 둥글게 */
+  border-radius: 16px;
+
+  /* 이미지가 카드 밖으로 나가지 않도록 설정 */
+  overflow: hidden;
+
+  /* 카드 그림자 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* 움직임을 자연스럽게 설정 */
+  transition: 0.2s;
+}
+
+/* ===== 도전 과제 4. Hover 시 카드 살짝 확대 ===== */
+.course-card:hover {
+  /* 카드 크기를 1.03배 확대 */
+  transform: scale(1.03);
+
+  /* Hover 시 그림자를 조금 더 진하게 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== 기본 과제 4. 강의 이미지 ===== */
+.course-image {
+  width: 100%;
+  height: 180px;
+
+  /* 이미지 비율을 유지하면서 영역 채우기 */
+  object-fit: cover;
+}
+
+/* 강의 정보 영역 */
+.course-content {
+  padding: 20px;
+}
+
+/* ===== 기본 과제 5. 카테고리 ===== */
+.course-category {
+  /* 글자 크기 */
+  font-size: 14px;
+
+  /* 글자 굵기 */
+  font-weight: bold;
+
+  /* 글자와 배경 사이 여백 */
+  padding: 6px 10px;
+
+  /* 모서리 둥글게 */
+  border-radius: 6px;
+
+  /* 글자 크기만큼 영역 사용 */
+  display: inline-block;
+}
+
+/* ===== 도전 과제 3. Frontend 카테고리 ===== */
+.frontend {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* ===== 도전 과제 3. Backend 카테고리 ===== */
+.backend {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+/* ===== 도전 과제 3. AI 카테고리 ===== */
+.ai {
+  background-color: #f3e8ff;
+  color: #7e22ce;
+}
+
+/* ===== 기본 과제 6. 강의 제목 ===== */
+.course-title {
+  margin: 8px 0 12px;
+  font-size: 22px;
+}
+
+/* 강사명 */
+.course-instructor {
+  margin: 6px 0;
+  color: #666;
+}
+
+/* 평점 */
+.course-rating {
+  margin: 8px 0;
+}
+
+/* 가격 */
+.course-price {
+  margin: 12px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ===== 도전 과제 1. 50,000원 이상 가격 ===== */
+.expensive {
+  /* 가격을 빨간색으로 표시 */
+  color: red;
+}
+
+/* ===== 도전 과제 2. BEST 배지 ===== */
+.best-badge {
+  /* 배경색 */
+  background-color: #ff4757;
+
+  /* 글자색 */
+  color: white;
+
+  /* 글자 크기 */
+  font-size: 12px;
+
+  /* 글자 굵기 */
+  font-weight: bold;
+
+  /* 안쪽 여백 */
+  padding: 5px 8px;
+
+  /* 모서리 둥글게 */
+  border-radius: 5px;
+
+  /* 필요한 크기만 사용 */
+  display: inline-block;
+
+  /* 아래쪽 간격 */
+  margin-bottom: 8px;
+}
+
+/* 수강신청 버튼 */
+.course-button {
+  width: 100%;
+  padding: 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #6c63ff;
+  color: white;
+
+  font-size: 16px;
+
+  /* 마우스를 올리면 손가락 모양 */
+  cursor: pointer;
+}
+
+/* 버튼 Hover */
+.course-button:hover {
+  background-color: #554ee0;
+}
